@@ -1,9 +1,11 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
         // If lengths differ, cannot be anagrams
-        if (s.length() != t.length()) return false;
+        int n = s.length();
+        int m = t.length();
+        if(n != m) return false;
 
-        int[] count = new int[26];
+        short[] count = new short[26];
 
         for (int i = 0; i < s.length(); i++) {
             count[s.charAt(i) - 'a']++;   // increment for s
@@ -11,10 +13,11 @@ class Solution {
         }
 
         // If all counts == 0, then anagrams
-        for (int c : count) {
+        for (short c : count) {
             if (c != 0) return false;
         }
 
         return true;
     }
 }
+
