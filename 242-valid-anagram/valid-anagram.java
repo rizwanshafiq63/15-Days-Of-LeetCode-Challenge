@@ -12,9 +12,14 @@ class Solution {
             count[t.charAt(i) - 'a']--;   // decrement for t
         }
 
-        // If all counts == 0, then anagrams
-        for (short c : count) {
-            if (c != 0) return false;
+        // // If all counts == 0, then anagrams
+        // for (short c : count) {
+        //     if (c != 0) return false;
+        // }
+        for(byte i=0; i<26; i++){
+            if(count[i] != 0){
+                return false;
+            }
         }
 
         return true;
